@@ -29,7 +29,6 @@ class KindleLBTAUITests: XCTestCase {
         XCTAssert(XCUIApplication().tables.staticTexts[bookTitle[0]].exists, "Steve Jobs is not displayed")
         XCTAssert(XCUIApplication().tables.staticTexts[bookTitle[1]].exists, "Bill Gates: A Biography")
         
-        
     }
 
 }
