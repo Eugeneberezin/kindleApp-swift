@@ -35,14 +35,14 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
-//        let book = books?[indexPath.row]
-//
-//
-//        cell.textLabel?.text = book?.title
-//        cell.imageView?.image = book?.image
-//
-//        cell.accessibilityIdentifier = "CELL ID = \(book?.title ?? "CELL"))"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! BookCell
+        
+        let book = books?[indexPath.row]
+        cell.book = book
+        
+        
+        cell.accessibilityIdentifier = "CELL ID = \(book?.title ?? "CELL"))"
+        
         
         
         return cell

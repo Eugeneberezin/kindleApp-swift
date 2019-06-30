@@ -9,8 +9,15 @@
 import UIKit
 
 class BookCell: UITableViewCell {
+    var book: Book? {
+        didSet {
+            coverImageView.image = book?.image
+            titleLabel.text = book?.title
+            authorLabel.text = book?.author
+        }
+    }
     
-    let coverImageView: UIImageView = {
+    private let coverImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,17 +25,15 @@ class BookCell: UITableViewCell {
         return imageView
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
         label.text = "This is the text for the title for our book inside of our cell"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let authorLabel: UILabel = {
+    private let authorLabel: UILabel = {
         let lable = UILabel()
-        lable.backgroundColor = .gray
         lable.text = "This is Label for Author title lable"
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
@@ -37,8 +42,6 @@ class BookCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        backgroundColor = .magenta
         
         addSubview(coverImageView)
         coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
