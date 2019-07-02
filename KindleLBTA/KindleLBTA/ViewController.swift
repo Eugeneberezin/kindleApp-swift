@@ -8,25 +8,34 @@
 
 import UIKit
 
-
-
 class ViewController: UITableViewController {
     
     var books: [Book]?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(BookCell.self, forCellReuseIdentifier: "cellID")
+        tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         
         navigationItem.title = "Kindle"
         
-        //can provide custom code starting here
-        setUpBooks()
+        setupBooks()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let selectedBook = self.books?[indexPath.row]
+        //        print(book?.title)
+        //        return
+        
+        let layout = UICollectionViewFlowLayout()
+        let bookPagerController = BookPagerController(collectionViewLayout: layout)
+        
+        bookPagerController.book = selectedBook
+        
+        let navController = UINavigationController(rootViewController: bookPagerController)
+        present(navController, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -34,16 +43,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! BookCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! BookCell
         
         let book = books?[indexPath.row]
         cell.book = book
-        
-        
-        cell.accessibilityIdentifier = "CELL ID = \(book?.title ?? "CELL"))"
-        
-        
         
         return cell
     }
@@ -52,11 +55,10 @@ class ViewController: UITableViewController {
         if let count = books?.count {
             return count
         }
-        
         return 0
     }
     
-    func setUpBooks() {
+    func setupBooks() {
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "This is text for second page")
         
@@ -64,7 +66,7 @@ class ViewController: UITableViewController {
         
         let book = Book(title: "Steve Jobs", author: "Walter Isaacson", image: #imageLiteral(resourceName: "steve_jobs"), pages: pages)
         
-        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: #imageLiteral(resourceName: "bill_gates"),  pages: [
+        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: #imageLiteral(resourceName: "bill_gates"), pages: [
             Page(number: 1, text: "Text for page 1"),
             Page(number: 2, text: "Text for page 2"),
             Page(number: 3, text: "Text for page 3"),
@@ -72,8 +74,7 @@ class ViewController: UITableViewController {
             ])
         
         self.books = [book, book2]
-        
-        }
-
+    }
+    
 }
 
