@@ -16,6 +16,8 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
         
+        accessibilityLabel = self.book?.title
+        
         navigationItem.title = self.book?.title
         
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
@@ -52,7 +54,10 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
          } else {
          cell.backgroundColor = .blue
          }*/
+        pageCell.accessibilityIdentifier = "PAGE_CELL \(book?.title ?? "PAGE_CELL")"
         
         return pageCell
     }
+    
+    
 }
