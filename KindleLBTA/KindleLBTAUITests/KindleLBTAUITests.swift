@@ -42,7 +42,7 @@ class KindleLBTAUITests: XCTestCase {
         XCTAssert(XCUIApplication().tables.staticTexts[bookAuthor[1]].exists, "Michael Becraft is not displayed")
         steveJobsBook.tap()
         
-        XCUIApplication().collectionViews.cells["PAGE_CELL Steve Jobs"].swipeLeft()
+        XCUIApplication().collectionViews.cells["PAGE_CELL_Steve Jobs"].swipeLeft()
     
     }
 

@@ -38,7 +38,7 @@ class ViewController: UITableViewController {
                 
                 let dataAsString = String(data: data, encoding: .utf8)
                 
-                print(dataAsString)
+                print(dataAsString as Any)
             
         }.resume()
             

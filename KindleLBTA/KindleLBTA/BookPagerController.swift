@@ -54,7 +54,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
          } else {
          cell.backgroundColor = .blue
          }*/
-        pageCell.accessibilityIdentifier = "PAGE_CELL \(book?.title ?? "PAGE_CELL")"
+        pageCell.accessibilityIdentifier = "PAGE_CELL_\(book?.title ?? "PAGE_CELL")"
         
         return pageCell
     }
