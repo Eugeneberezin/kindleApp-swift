@@ -23,6 +23,10 @@ class PageCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        //Enabling accessibility
+        isAccessibilityElement = true
+        //Adding accessibility hint so it's clear for a user that this is a page.
+        accessibilityHint = "This is a page. Press and swite to move to the next page"
         
         addSubview(textLable)
         //textLable.frame = CGRect(x: 0, y: 0, width: 100, height: 200)

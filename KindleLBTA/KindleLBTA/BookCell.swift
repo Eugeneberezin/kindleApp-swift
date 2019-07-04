@@ -11,9 +11,30 @@ import UIKit
 class BookCell: UITableViewCell {
     var book: Book? {
         didSet {
-            coverImageView.image = book?.image
             titleLabel.text = book?.title
             authorLabel.text = book?.author
+            accessibilityIdentifier = "BOOK_CELL_ID_\(book?.author ?? "")"
+
+            guard let coverImageUrl = book?.coverImageUrl else { return }
+            guard let url = URL(string: coverImageUrl) else { return }
+            
+            coverImageView.image = nil
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                
+                if let err = error {
+                    print("Fail to fetch the image")
+                    return
+                }
+                guard let imageData = data else { return }
+                let image  = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    self.coverImageView.image = image
+                }
+
+                
+                
+            }.resume()
         }
     }
     

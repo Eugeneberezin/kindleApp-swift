@@ -28,12 +28,19 @@ class KindleLBTAUITests: XCTestCase {
         let bookAuthor = ["Walter Isaacson", "Michael Becraft"]
         let closeButton = XCUIApplication().navigationBars.buttons["Close"]
         
-        let steveJobsBook = XCUIApplication().tables.staticTexts[bookTitle[0]]
+        let steveJobsBook = XCUIApplication().tables.children(matching: .cell).matching(identifier: "BOOK_CELL_ID_Walter Isaacson").element(boundBy: 0).staticTexts["Walter Isaacson"]
         let billGatesBook = XCUIApplication().tables.staticTexts[bookTitle[1]]
+        
+        XCUIApplication().tables.children(matching: .cell).matching(identifier: "BOOK_CELL_ID_Walter Isaacson").element(boundBy: 0).staticTexts["Walter Isaacson"]
+        
+        
+        
+        
+        
         
         steveJobsBook.tap()
         closeButton.tap()
-        XCTAssert(XCUIApplication().tables.staticTexts[bookTitle[0]].exists, "Steve Jobs is not displayed")
+        XCTAssert(steveJobsBook.exists, "Steve Jobs is not displayed")
         
         billGatesBook.tap()
         closeButton.tap()
@@ -43,6 +50,10 @@ class KindleLBTAUITests: XCTestCase {
         steveJobsBook.tap()
         
         XCUIApplication().collectionViews.cells["PAGE_CELL_Steve Jobs"].swipeLeft()
+        
+        
+        
+        
     
     }
 

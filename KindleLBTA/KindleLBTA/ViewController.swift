@@ -15,43 +15,83 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBarStyles()
+        setupNavBarButtons()
+        
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         
         navigationItem.title = "Kindle"
         
-        setupBooks()
         fetchBooks()
     }
     
+    func setupNavBarButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon_icon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAmazonIconPress))
+        
+    }
+    
+    @objc func handleMenuPress() {
+        print("Menu press")
+        
+    }
+    
+    @objc func handleAmazonIconPress() {
+        print("Amazon icon press")
+    }
+    
+    func setupNavigationBarStyles() {
+        print("Setting up nav bar styles")
+        navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+    }
+    
     func fetchBooks() {
-        print("Fetching books ... ")
+        print("Fetching books....")
         if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 
                 if let err = error {
                     print("Failed to fetch external json books: ", err)
+                    return
                 }
-                
                 
                 guard let data = data else { return }
                 
-                let dataAsString = String(data: data, encoding: .utf8)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    
+                    guard let bookDictionaries = json as? [[String: Any]] else { return }
+                    
+                    self.books = []
+                    for bookDictionary in bookDictionaries {
+                        let book = Book(dictionary: bookDictionary)
+                        self.books?.append(book)
+                    
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                } catch let jsonError {
+                    print("Failed to parse JSON properly: ", jsonError)
+                }
                 
-                print(dataAsString as Any)
-            
-        }.resume()
-            
-        
+                
+                
+                
+            }).resume() 
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedBook = self.books?[indexPath.row]
-        //        print(book?.title)
-        //        return
+  
         
         let layout = UICollectionViewFlowLayout()
         let bookPagerController = BookPagerController(collectionViewLayout: layout)
@@ -82,23 +122,8 @@ class ViewController: UITableViewController {
         return 0
     }
     
-    func setupBooks() {
-        let page1 = Page(number: 1, text: "Text for the first page")
-        let page2 = Page(number: 2, text: "This is text for second page")
-        
-        let pages = [page1, page2]
-        
-        let book = Book(title: "Steve Jobs", author: "Walter Isaacson", image: #imageLiteral(resourceName: "steve_jobs"), pages: pages)
-        
-        let book2 = Book(title: "Bill Gates: A Biography", author: "Michael Becraft", image: #imageLiteral(resourceName: "bill_gates"), pages: [
-            Page(number: 1, text: "Text for page 1"),
-            Page(number: 2, text: "Text for page 2"),
-            Page(number: 3, text: "Text for page 3"),
-            Page(number: 4, text: "Text for page 4")
-            ])
-        
-        self.books = [book, book2]
-    }
+    
     
 }
+
 

@@ -19,7 +19,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
         accessibilityLabel = self.book?.title
         
         navigationItem.title = self.book?.title
-        
+       
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
         
         let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
@@ -48,12 +48,6 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
         
         let page = book?.pages[indexPath.item]
         pageCell.textLable.text = page?.text
-        
-        /*if indexPath.item % 2 == 0 {
-         cell.backgroundColor = .red
-         } else {
-         cell.backgroundColor = .blue
-         }*/
         pageCell.accessibilityIdentifier = "PAGE_CELL_\(book?.title ?? "PAGE_CELL")"
         
         return pageCell
