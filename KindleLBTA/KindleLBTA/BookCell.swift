@@ -49,6 +49,8 @@ class BookCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "This is the text for the title for our book inside of our cell"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -56,6 +58,7 @@ class BookCell: UITableViewCell {
     private let authorLabel: UILabel = {
         let lable = UILabel()
         lable.text = "This is Label for Author title lable"
+        lable.textColor = UIColor.lightGray
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
         
@@ -64,6 +67,9 @@ class BookCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        backgroundColor = .clear
+        isAccessibilityElement = true
+        accessibilityIdentifier = "BOOK_CELL_ID_\(book?.title ?? "")"
         addSubview(coverImageView)
         coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
         coverImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
