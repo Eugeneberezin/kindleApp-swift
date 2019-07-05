@@ -32,7 +32,7 @@ You should have Xcode 10.2+, Swift 5.
 
 ### Installing
 
-Clone the ripo.
+Clone the repo.
 
 Open the project in your XCode
 
