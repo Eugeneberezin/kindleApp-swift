@@ -13,9 +13,10 @@ class PageCell: UICollectionViewCell {
     let textLable: UILabel = {
         let lable = UILabel()
         lable.text = "SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABELSOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL "
-        
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.numberOfLines = 0
+        
+        lable.accessibilityIdentifier = "ID_PAGE"
         return lable
     }()
     
@@ -23,11 +24,10 @@ class PageCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //Enabling accessibility
-        isAccessibilityElement = true
-        //Adding accessibility hint so it's clear for a user that this is a page.
-        accessibilityHint = "This is a page. Press and swite to move to the next page"
         
+        //Adding accessibility hint so it's clear for a user that this is a page.
+        accessibilityHint = "This is a page. Press and swipe left to move to the next page"
+    
         addSubview(textLable)
         //textLable.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
         textLable.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

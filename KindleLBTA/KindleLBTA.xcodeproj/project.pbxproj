@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05362A9722CEA58000912827 /* a5b25arnjha21.png in Resources */ = {isa = PBXBuildFile; fileRef = 05362A9622CEA58000912827 /* a5b25arnjha21.png */; };
 		0554886722CADB6B00796388 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554886622CADB6B00796388 /* BookPagerController.swift */; };
 		0554886922CAE70500796388 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554886822CAE70500796388 /* PageCell.swift */; };
 		0597905222C6DDFE000AB5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597905122C6DDFE000AB5B2 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 		0597907222C6DE00000AB5B2 /* KindleLBTAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597907122C6DE00000AB5B2 /* KindleLBTAUITests.swift */; };
 		0597908022C6F577000AB5B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597907F22C6F577000AB5B2 /* Models.swift */; };
 		0599940622C825680067809F /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599940522C825680067809F /* BookCell.swift */; };
+		05D5217322CEC0FD0067724E /* KindleScreenObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5217222CEC0FD0067724E /* KindleScreenObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05362A9622CEA58000912827 /* a5b25arnjha21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a5b25arnjha21.png; path = "../../../../iOS course/a5b25arnjha21.png"; sourceTree = "<group>"; };
 		0554886622CADB6B00796388 /* BookPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
 		0554886822CAE70500796388 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		0597904E22C6DDFE000AB5B2 /* KindleLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +56,7 @@
 		0597907322C6DE00000AB5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0597907F22C6F577000AB5B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0599940522C825680067809F /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		05D5217222CEC0FD0067724E /* KindleScreenObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindleScreenObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				0597905822C6DDFF000AB5B2 /* Assets.xcassets */,
 				0597905A22C6DDFF000AB5B2 /* LaunchScreen.storyboard */,
 				0597905D22C6DDFF000AB5B2 /* Info.plist */,
+				05362A9622CEA58000912827 /* a5b25arnjha21.png */,
 				0597907F22C6F577000AB5B2 /* Models.swift */,
 				0599940522C825680067809F /* BookCell.swift */,
 				0554886622CADB6B00796388 /* BookPagerController.swift */,
@@ -130,6 +135,7 @@
 			children = (
 				0597907122C6DE00000AB5B2 /* KindleLBTAUITests.swift */,
 				0597907322C6DE00000AB5B2 /* Info.plist */,
+				05D5217222CEC0FD0067724E /* KindleScreenObjects.swift */,
 			);
 			path = KindleLBTAUITests;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			files = (
 				0597905C22C6DDFF000AB5B2 /* LaunchScreen.storyboard in Resources */,
 				0597905922C6DDFF000AB5B2 /* Assets.xcassets in Resources */,
+				05362A9722CEA58000912827 /* a5b25arnjha21.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0597907222C6DE00000AB5B2 /* KindleLBTAUITests.swift in Sources */,
+				05D5217322CEC0FD0067724E /* KindleScreenObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

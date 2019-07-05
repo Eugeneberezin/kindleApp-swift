@@ -87,9 +87,6 @@ class ViewController: UITableViewController {
                     print("Failed to parse JSON properly: ", jsonError)
                 }
                 
-                
-                
-                
             }).resume() 
         }
     }

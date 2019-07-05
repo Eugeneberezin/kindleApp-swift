@@ -68,8 +68,6 @@ class BookCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .clear
-        isAccessibilityElement = true
-        accessibilityIdentifier = "BOOK_CELL_ID_\(book?.title ?? "")"
         addSubview(coverImageView)
         coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
         coverImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true

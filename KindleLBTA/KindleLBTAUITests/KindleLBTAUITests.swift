@@ -23,38 +23,13 @@ class KindleLBTAUITests: XCTestCase {
         
     }
 
-    func testExample() {
-        let bookTitle = ["Steve Jobs", "Bill Gates: A Biography"]
-        let bookAuthor = ["Walter Isaacson", "Michael Becraft"]
-        let closeButton = XCUIApplication().navigationBars.buttons["Close"]
+    func testSmokeTest() {
+        KindleScreenObjects.openBookAndSwipeLeftAndClosePage(book: KindleScreenObjects.books.steveJobsBook, page: KindleScreenObjects.pages.firstPageOfSteveJobsBook, button: KindleScreenObjects.buttons.close)
         
-        let steveJobsBook = XCUIApplication().tables.children(matching: .cell).matching(identifier: "BOOK_CELL_ID_Walter Isaacson").element(boundBy: 0).staticTexts["Walter Isaacson"]
-        let billGatesBook = XCUIApplication().tables.staticTexts[bookTitle[1]]
+        XCTAssert(KindleScreenObjects.books.steveJobsBook.exists, "Page did not close")
         
-        XCUIApplication().tables.children(matching: .cell).matching(identifier: "BOOK_CELL_ID_Walter Isaacson").element(boundBy: 0).staticTexts["Walter Isaacson"]
+        KindleScreenObjects.openBookAndSwipeLeftAndClosePage(book: KindleScreenObjects.books.billGatesBpook, page: KindleScreenObjects.pages.firstPageOfBillGates, button: KindleScreenObjects.buttons.close)
         
-        
-        
-        
-        
-        
-        steveJobsBook.tap()
-        closeButton.tap()
-        XCTAssert(steveJobsBook.exists, "Steve Jobs is not displayed")
-        
-        billGatesBook.tap()
-        closeButton.tap()
-        XCTAssert(XCUIApplication().tables.staticTexts[bookTitle[1]].exists, "Bill Gates: A Biography")
-        XCTAssert(XCUIApplication().tables.staticTexts[bookAuthor[0]].exists, "Walter Isaacson is not displayed")
-        XCTAssert(XCUIApplication().tables.staticTexts[bookAuthor[1]].exists, "Michael Becraft is not displayed")
-        steveJobsBook.tap()
-        
-        XCUIApplication().collectionViews.cells["PAGE_CELL_Steve Jobs"].swipeLeft()
-        
-        
-        
-        
-    
+        XCTAssert(KindleScreenObjects.books.steveJobsBook.exists, "Page did not close")
     }
-
 }
