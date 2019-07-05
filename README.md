@@ -58,7 +58,7 @@ I use Page Object Model for my UI tests.
 
 ```
 
-### WHat I learned. 
+### What I learned. 
 
 Building the app end to end. Using auto layout in stade of the frame. 
 Implementation of accessibility API to make the app more testable and maintainable. 
