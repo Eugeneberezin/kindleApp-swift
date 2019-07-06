@@ -12,11 +12,9 @@ class PageCell: UICollectionViewCell {
     
     let textLable: UILabel = {
         let lable = UILabel()
-        lable.text = "SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABELSOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL SOME TEXT FOR OUR LABEL "
         lable.translatesAutoresizingMaskIntoConstraints = false
         lable.numberOfLines = 0
-        
-        lable.accessibilityIdentifier = "ID_PAGE"
+        lable.accessibilityIdentifier = "ID_PAGE\(PageCell.accessibilityElementCount())"
         return lable
     }()
     

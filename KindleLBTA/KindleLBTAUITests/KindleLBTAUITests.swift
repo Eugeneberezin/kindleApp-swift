@@ -31,5 +31,7 @@ class KindleLBTAUITests: XCTestCase {
         KindleScreenObjects.openBookAndSwipeLeftAndClosePage(book: KindleScreenObjects.books.billGatesBpook, page: KindleScreenObjects.pages.firstPageOfBillGates, button: KindleScreenObjects.buttons.close)
         
         XCTAssert(KindleScreenObjects.books.steveJobsBook.exists, "Page did not close")
+        
+        
     }
 }
