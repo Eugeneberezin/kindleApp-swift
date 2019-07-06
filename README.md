@@ -64,4 +64,4 @@ Building the app end to end. Using auto layout in stade of the frame.
 Implementation of accessibility API to make the app more testable and maintainable. 
 
 ### Screenshot
-![iPhone](https://github.com/Eugeneberezin/kindleApp-swift/blob/master/Images/MyApScreenSh.jpeg)
+![iPhone](https://github.com/Eugeneberezin/kindleApp-swift/blob/master/Images/Screen%20Shot%202019-07-05%20at%208.50.01%20PM.png)
