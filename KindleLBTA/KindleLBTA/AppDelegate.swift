@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = LightStatusBarNavController(rootViewController: ViewController())
+        window?.rootViewController = LightStatusBarNavController(rootViewController: RegistrationController())
         
         
         return true

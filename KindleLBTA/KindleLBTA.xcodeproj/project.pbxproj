@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05362A9722CEA58000912827 /* a5b25arnjha21.png in Resources */ = {isa = PBXBuildFile; fileRef = 05362A9622CEA58000912827 /* a5b25arnjha21.png */; };
 		0554886722CADB6B00796388 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554886622CADB6B00796388 /* BookPagerController.swift */; };
 		0554886922CAE70500796388 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554886822CAE70500796388 /* PageCell.swift */; };
+		0570382923134DE800939035 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570382623134DE800939035 /* CustomTextField.swift */; };
+		0570382A23134DE800939035 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570382723134DE800939035 /* RegistrationViewModel.swift */; };
+		0570382B23134DE800939035 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570382823134DE800939035 /* RegistrationController.swift */; };
+		0570382F23134EB700939035 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570382D23134EB700939035 /* LoginViewModel.swift */; };
+		0570383023134EB700939035 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570382E23134EB700939035 /* LoginController.swift */; };
+		0570383223134F2B00939035 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570383123134F2B00939035 /* Extensions+UIView.swift */; };
+		0570383423134F5E00939035 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570383323134F5E00939035 /* Bindable.swift */; };
 		0597905222C6DDFE000AB5B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597905122C6DDFE000AB5B2 /* AppDelegate.swift */; };
 		0597905422C6DDFE000AB5B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597905322C6DDFE000AB5B2 /* ViewController.swift */; };
 		0597905922C6DDFF000AB5B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0597905822C6DDFF000AB5B2 /* Assets.xcassets */; };
@@ -39,9 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05362A9622CEA58000912827 /* a5b25arnjha21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a5b25arnjha21.png; path = "../../../../iOS course/a5b25arnjha21.png"; sourceTree = "<group>"; };
 		0554886622CADB6B00796388 /* BookPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
 		0554886822CAE70500796388 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		0570382623134DE800939035 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0570382723134DE800939035 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		0570382823134DE800939035 /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		0570382D23134EB700939035 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0570382E23134EB700939035 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		0570383123134F2B00939035 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		0570383323134F5E00939035 /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		0597904E22C6DDFE000AB5B2 /* KindleLBTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindleLBTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0597905122C6DDFE000AB5B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0597905322C6DDFE000AB5B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0570382523134D7500939035 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				0570382623134DE800939035 /* CustomTextField.swift */,
+				0570382823134DE800939035 /* RegistrationController.swift */,
+				0570382723134DE800939035 /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		0570382C23134E3A00939035 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0570382E23134EB700939035 /* LoginController.swift */,
+				0570382D23134EB700939035 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		0597904522C6DDFE000AB5B2 = {
 			isa = PBXGroup;
 			children = (
@@ -107,13 +138,16 @@
 		0597905022C6DDFE000AB5B2 /* KindleLBTA */ = {
 			isa = PBXGroup;
 			children = (
+				0570383123134F2B00939035 /* Extensions+UIView.swift */,
+				0570382C23134E3A00939035 /* Login */,
+				0570382523134D7500939035 /* Registration */,
 				0597905122C6DDFE000AB5B2 /* AppDelegate.swift */,
 				0597905322C6DDFE000AB5B2 /* ViewController.swift */,
 				0597905822C6DDFF000AB5B2 /* Assets.xcassets */,
 				0597905A22C6DDFF000AB5B2 /* LaunchScreen.storyboard */,
 				0597905D22C6DDFF000AB5B2 /* Info.plist */,
-				05362A9622CEA58000912827 /* a5b25arnjha21.png */,
 				0597907F22C6F577000AB5B2 /* Models.swift */,
+				0570383323134F5E00939035 /* Bindable.swift */,
 				0599940522C825680067809F /* BookCell.swift */,
 				0554886622CADB6B00796388 /* BookPagerController.swift */,
 				0554886822CAE70500796388 /* PageCell.swift */,
@@ -246,7 +280,6 @@
 			files = (
 				0597905C22C6DDFF000AB5B2 /* LaunchScreen.storyboard in Resources */,
 				0597905922C6DDFF000AB5B2 /* Assets.xcassets in Resources */,
-				05362A9722CEA58000912827 /* a5b25arnjha21.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,11 +304,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0570383423134F5E00939035 /* Bindable.swift in Sources */,
+				0570383023134EB700939035 /* LoginController.swift in Sources */,
+				0570382923134DE800939035 /* CustomTextField.swift in Sources */,
+				0570383223134F2B00939035 /* Extensions+UIView.swift in Sources */,
+				0570382B23134DE800939035 /* RegistrationController.swift in Sources */,
 				0599940622C825680067809F /* BookCell.swift in Sources */,
 				0554886722CADB6B00796388 /* BookPagerController.swift in Sources */,
 				0554886922CAE70500796388 /* PageCell.swift in Sources */,
 				0597908022C6F577000AB5B2 /* Models.swift in Sources */,
+				0570382A23134DE800939035 /* RegistrationViewModel.swift in Sources */,
 				0597905422C6DDFE000AB5B2 /* ViewController.swift in Sources */,
+				0570382F23134EB700939035 /* LoginViewModel.swift in Sources */,
 				0597905222C6DDFE000AB5B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

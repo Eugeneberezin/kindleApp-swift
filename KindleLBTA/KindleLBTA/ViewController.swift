@@ -39,7 +39,8 @@ class ViewController: UITableViewController {
     }
     
     @objc func handleMenuPress() {
-        print("Menu press")
+        let registrationController = RegistrationController()
+        present(registrationController, animated: true)
         
     }
     
